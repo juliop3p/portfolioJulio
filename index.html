@@ -167,7 +167,7 @@
         <div class="col-12 col-md-6 my-3">
           <h3 class="mb-4">Informações Pessoais</h3>
           <p><strong>Nome:</strong> Julio Cesar</p>
-          <p><strong>Idade:</strong> 20 anos</p>
+          <p><strong>Idade:</strong> <span id="age"></span> anos</p>
           <p><strong>Endereço:</strong> Mauá, SP</p>
           <p><strong>Telefone:</strong> +55 (13) 981418755</p>
           <p><strong>E-mail:</strong> julio15.zn@gmail.com</p>
@@ -177,9 +177,9 @@
               >Engenheiro de Software Jr.</span
             >
           </p>
-          <button class="btn btn-secondary bg-secondary text-uppercase">
+          <a class="btn btn-secondary bg-secondary text-uppercase" href="./assets/CV.pdf" target="_blank">
             baixar cv
-          </button>
+          </a>
         </div>
 
         <div class="col-12 col-md-6 my-3">
@@ -271,10 +271,10 @@
               role="progressbar"
               aria-valuenow="10"
               aria-valuemin="0"
-              style="width: 85%"
+              style="width: 65%"
               aria-valuemax="100"
             >
-              <span class="percentage" style="left: 80%">85%</span>
+              <span class="percentage" style="left: 60%">65%</span>
             </div>
           </div>
           <!--  -->
@@ -285,14 +285,14 @@
               role="progressbar"
               aria-valuenow="10"
               aria-valuemin="0"
-              style="width: 80%"
+              style="width: 60%"
               aria-valuemax="100"
             >
-              <span class="percentage" style="left: 75%">80%</span>
+              <span class="percentage" style="left: 55%">60%</span>
             </div>
           </div>
           <!--  -->
-          <p>Java | Framework Spring</p>
+          <p>.NET</p>
           <div class="progress mb-3">
             <div
               class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
@@ -428,6 +428,7 @@
           <h4 class="mb-3">Habilidades Complementares</h4>
         </div>
         <div class="col-12 additional-skills">
+          <small class="skill my-3">Java | Framework Spring</small>
           <small class="skill my-3">Bootstrap</small>
           <small class="skill my-3">PostgreSQL</small>
           <small class="skill my-3">React Native</small>
@@ -440,6 +441,9 @@
           <small class="skill my-3">Git/GitHub</small>
           <small class="skill my-3">Docker</small>
           <small class="skill my-3">Linux</small>
+          <small class="skill my-3">Splunk</small>
+          <small class="skill my-3">Entity Framework</small>
+          <small class="skill my-3">Identity Framework</small>
         </div>
       </div>
     </section>
@@ -519,7 +523,7 @@
 
       <div
         id="carouselExampleControls"
-        class="carousel slide carousel-fade"
+        class="carousel slide"
         data-ride="carousel"
       >
         <div class="carousel-inner">
@@ -527,7 +531,7 @@
             <div class="card card-project bg-dark">
               <img
                 src="./img/gomusic.png"
-                class="d-block w-100"
+                class="d-block w-100 carousel-imagem"
                 alt="Aplicação GoMusic"
               />
               <div class="card-img-hover">
@@ -549,7 +553,7 @@
             <div class="card card-project bg-dark">
               <img
                 src="./img/healffy.png"
-                class="d-block w-100"
+                class="d-block w-100 carousel-imagem"
                 alt="Aplicação GoMusic"
               />
               <div class="card-img-hover">
@@ -571,7 +575,7 @@
             <div class="card card-project bg-dark">
               <img
                 src="./img/bookontable.png"
-                class="d-block w-100"
+                class="d-block w-100 carousel-imagem"
                 alt="Aplicação GoMusic"
               />
               <div class="card-img-hover">
@@ -593,7 +597,7 @@
             <div class="card card-project bg-dark">
               <img
                 src="./img/resposta.png"
-                class="d-block w-100"
+                class="d-block w-100 carousel-imagem"
                 alt="Aplicação GoMusic"
               />
               <div class="card-img-hover">
@@ -615,7 +619,7 @@
             <div class="card card-project bg-dark">
               <img
                 src="./img/phonestore.png"
-                class="d-block w-100"
+                class="d-block w-100 carousel-imagem"
                 alt="Aplicação GoMusic"
               />
               <div class="card-img-hover">

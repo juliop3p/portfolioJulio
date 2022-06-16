@@ -153,6 +153,10 @@ strong {
   background: var(--color-background);
 }
 
+.carousel {
+  max-width: 1000px;
+}
+
 @media (min-width: 800px) {
   .carousel img {
     max-height: 80vh;
@@ -272,6 +276,11 @@ strong {
 
 .btn:hover::after {
   transform: translateY(0%);
+}
+
+.carousel-imagem {
+  width: 100%;
+  height: 500px
 }
 
 /* Scroll Bar */
