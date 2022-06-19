@@ -160,13 +160,14 @@ strong {
 @media (min-width: 800px) {
   .carousel img {
     max-height: 80vh;
-    height: 175px
+    
   }
 }
 
 @media (max-width: 800px) {
   .carousel img {
     width: 100% !important;
+    height: 175px;
   }
 }
 
