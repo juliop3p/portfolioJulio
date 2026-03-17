@@ -1,698 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" class="scroll-smooth">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/137131e49f.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>Julio Cesar | Software Engineer</title>
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00ff66', // Neon green accent
+              dark: '#0a0a0a',
+              card: '#121212',
+              cardHover: '#1a1a1a',
+              textMuted: '#a1a1aa',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Space Grotesk', 'sans-serif'],
+            },
+            boxShadow: {
+              neon: '0 0 15px rgba(0, 255, 102, 0.4)',
+              'neon-strong': '0 0 30px rgba(0, 255, 102, 0.6)',
+            }
+          }
+        }
+      }
+    </script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Portfolio Julio Cesar</title>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-gradient {
+          @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-300;
+        }
+        .bg-gradient-hover {
+          @apply hover:bg-gradient-to-r hover:from-primary hover:to-green-400 hover:text-dark transition-all duration-300;
+        }
+      }
+      body {
+        background-color: #0a0a0a;
+        color: #f4f4f5;
+      }
+      ::selection {
+        background-color: #00ff66;
+        color: #0a0a0a;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #00ff66;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Header -->
-    <header
-      class="container-fluid height-100 bg-img d-flex align-items-center justify-content-center"
-      id="home"
-    >
-      <div class="row">
-        <div class="col">
-          <nav
-            class="navbar fixed-top navbar-expand-lg px-5 navbar-dark bg-dark d-flex"
-          >
-            <a
-              href="#home"
-              class="text-success text-decoration-none righteous js-scroll-trigger"
-              style="font-size: 32px"
-              >Julio</a
-            >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li>
-                  <a
-                    href="#home"
-                    class="text-light mx-3 text-decoration-none text-uppercase nav-link js-scroll-trigger"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#about"
-                    class="text-light mx-3 text-decoration-none text-uppercase nav-link js-scroll-trigger"
-                    >Sobre</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#skills"
-                    class="text-light mx-3 text-decoration-none text-uppercase nav-link js-scroll-trigger"
-                    >Habilidade</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#projects"
-                    class="text-light mx-3 text-decoration-none text-uppercase nav-link js-scroll-trigger"
-                    >Projetos</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div class="row">
-        <div
-          class="card border-0 card-hover bg-dark p-3 text-light d-flex flex-column align-items-center"
-          style="width: 18rem"
-        >
-          <div class="img-top pulse">
-            <img src="./img/me.png" class="d-block w-100" alt="Julio Cesar" />
-          </div>
-          <div class="card-body">
-            <h4 class="text-center">Julio Cesar</h4>
-            <div class="lead text-center">Full Stack Developer</div>
-            <div class="row justify-content-center mt-3">
-              <a href="https://github.com/juliop3p"
-                ><i
-                  class="fab fa-github-alt mx-3 text-light hover-green"
-                  style="font-size: 28px"
-                ></i
-              ></a>
-              <a href="https://www.linkedin.com/in/juliop3p/"
-                ><i
-                  class="fab fa-linkedin-in mx-3 text-light hover-green"
-                  style="font-size: 28px"
-                ></i
-              ></a>
-              <a href="https://discord.com/channels/@me"
-                ><i
-                  class="fab fa-discord mx-3 text-light hover-green"
-                  style="font-size: 28px"
-                ></i
-              ></a>
-              <a href="https://wa.me/5513981418755">
-                <i
-                  class="fab fa-whatsapp mx-3 text-light hover-green"
-                  style="font-size: 28px"
-                ></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- end Header -->
-
-    <!-- About -->
-    <section
-      id="about"
-      class="container height-100 text-light d-flex flex-column align-items-center justify-content-center"
-    >
-      <div class="row py-3">
-        <div class="col-12">
-          <h2>Sobre mim</h2>
-          <div class="border-green"></div>
-          <p>
-            Sou um desenvolvedor de softwares Full-Stack, apaixonado por
-            desenvolver soluções fantásticas através de códigos que simplificam
-            e agregam na vida das pessoas. Atualmente estou cursando Sistema da
-            Informação e em busca de novos desafios que me permitam aprender e
-            evoluir.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 my-3">
-          <h3 class="mb-4">Informações Pessoais</h3>
-          <p><strong>Nome:</strong> Julio Cesar</p>
-          <p><strong>Idade:</strong> <span id="age"></span> anos</p>
-          <p><strong>Endereço:</strong> Mauá, SP</p>
-          <p><strong>Telefone:</strong> +55 (13) 981418755</p>
-          <p><strong>E-mail:</strong> julio15.zn@gmail.com</p>
-          <p>
-            <strong>Job Status:</strong>
-            <span class="bg-primary text-uppercase px-2 py-1 rounded"
-              >Engenheiro de Software Jr.</span
-            >
-          </p>
-          <a class="btn btn-secondary bg-secondary text-uppercase" href="./assets/CV.pdf" target="_blank">
-            baixar cv
-          </a>
-        </div>
-
-        <div class="col-12 col-md-6 my-3">
-          <h3 class="mb-4">Meus Interesses</h3>
-          <div class="row">
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fas fa-gamepad" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Jogos</div>
-            </div>
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fas fa-tv" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Séries</div>
-            </div>
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fas fa-coffee" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Café</div>
-            </div>
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fas fa-music" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Música</div>
-            </div>
-
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fas fa-plane" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Viagens</div>
-            </div>
-
-            <div
-              class="card card-hover interests bg-secondary p-2 text-center mx-4 my-4"
-              style="width: 7rem"
-            >
-              <i class="fab fa-twitch" style="font-size: 32px"></i>
-              <div class="mt-2 text-uppercase">Streams</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end About -->
-
-    <!-- Skills -->
-    <section
-      id="skills"
-      class="container height-100 text-light d-flex flex-column justify-content-center"
-    >
-      <div class="row">
-        <div class="col">
-          <h2>Minhas habilidades</h2>
-          <div class="border-green"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <h4 class="mb-3">Habilidades técnicas</h4>
-          <p>HTML5 | CSS3 | JS/ES6</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 90%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 85%">90%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Node.js | Express.js</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 65%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 60%">65%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>ReactJS</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 60%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 55%">60%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>.NET</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 70%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 65%">70%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Angular</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 70%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 65%">70%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>MySQL | MongoDB</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 70%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 65%">70%</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6">
-          <h4 class="mb-3">Habilidades interpessoais</h4>
-          <!--  -->
-          <p>Criatividade</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 85%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 80%">85%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Trabalho em Equipe</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 90%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 85%">90%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Comunicação</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 70%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 65%">70%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Atenção aos detalhes</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 95%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 90%">95%</span>
-            </div>
-          </div>
-          <!--  -->
-          <p>Proatividade</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 80%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 75%">80%</span>
-            </div>
-          </div>
-
-          <!--  -->
-          <p>Dedicação</p>
-          <div class="progress mb-3">
-            <div
-              class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
-              role="progressbar"
-              aria-valuenow="10"
-              aria-valuemin="0"
-              style="width: 80%"
-              aria-valuemax="100"
-            >
-              <span class="percentage" style="left: 75%">80%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12">
-          <h4 class="mb-3">Habilidades Complementares</h4>
-        </div>
-        <div class="col-12 additional-skills">
-          <small class="skill my-3">Java | Framework Spring</small>
-          <small class="skill my-3">Bootstrap</small>
-          <small class="skill my-3">PostgreSQL</small>
-          <small class="skill my-3">React Native</small>
-          <small class="skill my-3">Typescript</small>
-          <small class="skill my-3">Redux</small>
-          <small class="skill my-3">SCRUM</small>
-          <small class="skill my-3">Spring Security</small>
-          <small class="skill my-3">REST</small>
-          <small class="skill my-3">RESTful</small>
-          <small class="skill my-3">Git/GitHub</small>
-          <small class="skill my-3">Docker</small>
-          <small class="skill my-3">Linux</small>
-          <small class="skill my-3">Splunk</small>
-          <small class="skill my-3">Entity Framework</small>
-          <small class="skill my-3">Identity Framework</small>
-        </div>
-      </div>
-    </section>
-    <!-- end Skills -->
-
-    <!-- Projects -->
-    <!-- <section
-      id="projects"
-      class="container height-100 text-light d-flex flex-column justify-content-center align-items-center"
-    >
-      <div class="row justify-content-center my-4">
-        <div class="col">
-          <h2>Alguns dos meus projetos</h2>
-          <div class="border-green"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <ol class="carousel-indicators">
-            <li
-              data-target="#carouselExampleIndicators"
-              data-slide-to="0"
-              class="active"
-            ></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./img/healffy.png" class="d-block" alt="healffy" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/ecoleta.png" class="d-block" alt="Ecoleta" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/olx.png" class="d-block" alt="Olx Cópia" />
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselExampleIndicators"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </section> -->
-    <!-- end Projects -->
-
-    <!-- Projects -->
-    <section
-      class="container height-100 text-light d-flex flex-column justify-content-center align-items-center"
-      id="projects"
-    >
-      <div class="row justify-content-center my-4">
-        <div class="col-12">
-          <h2>Alguns dos meus projetos</h2>
-          <div class="border-green"></div>
-        </div>
-      </div>
-
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="card card-project bg-dark">
-              <img
-                src="./img/gomusic.png"
-                class="d-block w-100 carousel-imagem"
-                alt="Aplicação GoMusic"
-              />
-              <div class="card-img-hover">
-                <h5 class="card-title">App GoMusic</h5>
-                <p class="card-text">
-                  Aplicação criada durante as aulas da faculdade, feito apenas
-                  com HTML, CSS e JS.
-                </p>
-                <a
-                  href="https://gomusic.netlify.app/index.html"
-                  target="_blank"
-                  class="card-link"
-                  >Ver site</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card card-project bg-dark">
-              <img
-                src="./img/healffy.png"
-                class="d-block w-100 carousel-imagem"
-                alt="Aplicação GoMusic"
-              />
-              <div class="card-img-hover">
-                <h5 class="card-title">App Healffy</h5>
-                <p class="card-text">
-                  Aplicação criada durante um hackaton de saúde, feito com
-                  SpringBoot e ReactJS.
-                </p>
-                <a
-                  href="https://healffy.netlify.app"
-                  target="_blank"
-                  class="card-link"
-                  >Ver site</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card card-project bg-dark">
-              <img
-                src="./img/bookontable.png"
-                class="d-block w-100 carousel-imagem"
-                alt="Aplicação GoMusic"
-              />
-              <div class="card-img-hover">
-                <h5 class="card-title">Plataforma BookOnTable</h5>
-                <p class="card-text">
-                  Plataforma criada para aprender Inglês através de trechos de
-                  séries e filmes.
-                </p>
-                <a
-                  href="https://book-on-table.herokuapp.com/"
-                  target="_blank"
-                  class="card-link"
-                  >Ver site</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card card-project bg-dark">
-              <img
-                src="./img/resposta.png"
-                class="d-block w-100 carousel-imagem"
-                alt="Aplicação GoMusic"
-              />
-              <div class="card-img-hover">
-                <h5 class="card-title">Resposta Criativa</h5>
-                <p class="card-text">
-                  Esse foi um site que eu fiz para responder a resposta criativa
-                  do processo da Brazil Generation.
-                </p>
-                <a
-                  href="https://respostacriativa.netlify.app/"
-                  target="_blank"
-                  class="card-link"
-                  >Ver Site</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="card card-project bg-dark">
-              <img
-                src="./img/phonestore.png"
-                class="d-block w-100 carousel-imagem"
-                alt="Aplicação GoMusic"
-              />
-              <div class="card-img-hover">
-                <h5 class="card-title">Phone Store</h5>
-                <p class="card-text">Loja de smartphones feito com ReactJS.</p>
-                <a
-                  href="https://react-phone-store-julio.netlify.app/"
-                  target="_blank"
-                  class="card-link"
-                  >Ver Site</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+  <body class="font-sans antialiased text-gray-200 selection:bg-primary selection:text-dark">
+    
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-dark/80 backdrop-blur-md border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#home" class="font-heading font-bold text-2xl tracking-tighter text-white hover:text-primary transition-colors">
+          Julio.
         </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#home" class="hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="hover:text-primary transition-colors">Sobre</a>
+          <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-primary transition-colors">Projetos</a>
+          <a href="https://wa.me/5513981418755" target="_blank" class="px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-dark shadow-neon transition-all duration-300">
+            Contato
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-primary focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-white/5 absolute w-full">
+        <div class="px-6 pt-2 pb-6 space-y-4 flex flex-col">
+          <a href="#home" class="block hover:text-primary transition-colors text-lg">Home</a>
+          <a href="#about" class="block hover:text-primary transition-colors text-lg">Sobre</a>
+          <a href="#skills" class="block hover:text-primary transition-colors text-lg">Skills</a>
+          <a href="#projects" class="block hover:text-primary transition-colors text-lg">Projetos</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <!-- Background Glow Effect -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="z-10 order-2 lg:order-1 text-center lg:text-left">
+          <p class="text-primary font-mono text-sm md:text-base tracking-widest uppercase mb-3">Hey 👋, I'm a Full Stack Developer</p>
+          <h1 class="font-heading font-bold text-6xl md:text-8xl lg:text-[100px] leading-none mb-6 text-white tracking-tighter">
+            JULIO <br/> <span class="text-gradient">CESAR</span>
+          </h1>
+          <p class="text-textMuted text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            Software Engineer com foco em Front-end e arquitetura de aplicações modernas. Construindo produtos digitais escaláveis e eficientes.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-primary text-dark font-bold rounded-full hover:shadow-neon-strong transition-all duration-300 transform hover:-translate-y-1">
+              Ver Projetos
+            </a>
+          </div>
+          
+          <!-- Social Links -->
+          <div class="flex items-center justify-center lg:justify-start gap-6 mt-12">
+            <a href="https://github.com/juliop3p" target="_blank" class="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"><i class="fa-brands fa-github text-3xl"></i></a>
+            <a href="https://www.linkedin.com/in/juliop3p/" target="_blank" class="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"><i class="fa-brands fa-linkedin-in text-3xl"></i></a>
+            <a href="https://wa.me/5513981418755" target="_blank" class="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="z-10 order-1 lg:order-2 flex justify-center lg:justify-end relative">
+          <div class="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-card shadow-2xl z-20">
+             <img src="./img/Julio-Perfil.png" alt="Julio Cesar" class="w-full h-full object-cover object-top filter contrast-125 saturate-100 hover:scale-105 transition-transform duration-700" />
+          </div>
+          <!-- Decorative circle behind image -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-[420px] md:h-[420px] rounded-full border border-primary/30 z-10 animate-[spin_10s_linear_infinite]"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-[480px] md:h-[480px] rounded-full border border-white/5 z-0 animate-[spin_15s_linear_infinite_reverse]"></div>
+        </div>
       </div>
     </section>
-    <!-- end Projects -->
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-card/40 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col items-start mb-16">
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Sobre mim<span class="text-primary">.</span></h2>
+          <div class="w-24 h-1 bg-primary rounded"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Text -->
+          <div class="space-y-6 text-textMuted text-lg leading-relaxed">
+            <p>
+              Sou desenvolvedor de software com foco em <strong class="text-white">Front-end e arquitetura de aplicações modernas</strong>, com experiência na construção de produtos digitais escaláveis.
+            </p>
+            <p>
+              Atualmente atuo principalmente com <strong class="text-primary">Angular e TypeScript</strong>, desenvolvendo aplicações baseadas em Micro Frontends e arquitetura de componentes, com foco em performance, escalabilidade e manutenibilidade.
+            </p>
+            <p>
+              Tenho grande interesse em engenharia de software bem estruturada, aplicando princípios como Clean Architecture, boas práticas de componentização, testes automatizados e observabilidade para construir aplicações robustas e sustentáveis ao longo do tempo.
+            </p>
+            <p>
+              Além do ecossistema Front-end, também possuo experiência trabalhando com <strong class="text-white">Java, C#, .NET e Node.js</strong>, o que me permite transitar entre diferentes camadas da aplicação e colaborar de forma mais completa em arquiteturas distribuídas.
+            </p>
+            <div class="p-6 bg-card border border-white/10 rounded-2xl relative overflow-hidden mt-8">
+               <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full blur-2xl"></div>
+               <p class="relative z-10 italic">
+                 "Sou movido por aprendizado contínuo, desafios técnicos e pela oportunidade de construir produtos que impactem milhares de pessoas."
+               </p>
+            </div>
+          </div>
+
+          <!-- Academic / Focus -->
+          <div class="space-y-8">
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary/30 transition-colors group">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl">
+                  🎓
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-white">Acadêmico</h3>
+              </div>
+              <p class="text-textMuted">
+                Atualmente estou cursando uma pós-graduação em <strong class="text-white">Engenharia de Software com foco em Inteligência Artificial aplicada</strong>, orientada por Erick Wendel.
+              </p>
+              <p class="text-textMuted mt-4">
+                Aprofundando conhecimentos em sistemas inteligentes, LLMs e aplicação prática de IA em produtos de software.
+              </p>
+            </div>
+
+            <div class="bg-card p-8 rounded-3xl border border-white/5 hover:border-primary/30 transition-colors">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl">
+                  💡
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-white">Interesses</h3>
+              </div>
+              <p class="text-textMuted">
+                Grande interesse em arquitetura de software, engenharia de produto e <strong class="text-primary">inteligência artificial aplicada a aplicações reais</strong>, explorando constantemente novas formas de construir sistemas mais inteligentes e eficientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative overflow-hidden">
+       <!-- Glow Background -->
+      <div class="absolute -right-[20%] top-[20%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Tecnologias & Temas<span class="text-primary">.</span></h2>
+          <p class="text-textMuted max-w-2xl">Ferramentas, linguagens e conceitos presentes no meu dia a dia como engenheiro de software.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          
+          <!-- Skill Cards (Using the list provided by the user) -->
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fab fa-angular text-5xl text-red-600 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Angular</h4>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <div class="text-blue-500 text-5xl mb-4 font-bold group-hover:scale-110 transition-transform">TS</div>
+            <h4 class="font-bold text-white">TypeScript</h4>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fas fa-layer-group text-5xl text-purple-500 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Micro Frontends</h4>
+            <span class="text-xs text-textMuted mt-1">Module Federation</span>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fas fa-cubes text-5xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Arquitetura</h4>
+            <span class="text-xs text-textMuted mt-1">Front-end escalável</span>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fas fa-paint-roller text-5xl text-pink-500 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Design Systems</h4>
+            <span class="text-xs text-textMuted mt-1">& UI Libraries</span>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fas fa-vial text-5xl text-green-500 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Testes</h4>
+            <span class="text-xs text-textMuted mt-1">Automatizados</span>
+          </div>
+
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <i class="fas fa-chart-line text-5xl text-yellow-500 mb-4 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-bold text-white">Observabilidade</h4>
+            <span class="text-xs text-textMuted mt-1">& Performance</span>
+          </div>
+
+          <!-- Backend Stack -->
+          <div class="bg-card border border-white/5 p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:-translate-y-2 hover:border-primary/50 hover:shadow-neon transition-all duration-300 group">
+            <div class="flex gap-3 text-3xl mb-4 text-gray-400 group-hover:text-primary transition-colors">
+              <i class="fab fa-java"></i>
+              <i class="fab fa-node-js"></i>
+            </div>
+            <h4 class="font-bold text-white">Backend Layer</h4>
+            <span class="text-xs text-textMuted mt-1">Java • C# • .NET • Node</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-card/40 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col items-start mb-16">
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Projetos em destaque<span class="text-primary">.</span></h2>
+          <div class="w-24 h-1 bg-primary rounded"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="group relative bg-dark rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-colors duration-500">
+            <div class="h-60 overflow-hidden relative">
+              <div class="absolute inset-0 bg-primary/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500 z-10 mix-blend-overlay"></div>
+              <img src="./img/healffy.png" alt="Healffy" class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">App Healffy</h3>
+              <p class="text-textMuted mb-6 line-clamp-3">
+                Aplicação criada durante um hackaton de saúde, feita com SpringBoot e ReactJS.
+              </p>
+              <a href="https://healffy.netlify.app" target="_blank" class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors gap-2">
+                Ver site <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group relative bg-dark rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-colors duration-500">
+            <div class="h-60 overflow-hidden relative">
+              <div class="absolute inset-0 bg-primary/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500 z-10 mix-blend-overlay"></div>
+              <img src="./img/gomusic.png" alt="GoMusic" class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">App GoMusic</h3>
+              <p class="text-textMuted mb-6 line-clamp-3">
+                Aplicação criada durante as aulas da faculdade, feita apenas com HTML, CSS e JS.
+              </p>
+              <a href="https://gomusic.netlify.app/index.html" target="_blank" class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors gap-2">
+                Ver site <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group relative bg-dark rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-colors duration-500">
+            <div class="h-60 overflow-hidden relative">
+              <div class="absolute inset-0 bg-primary/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500 z-10 mix-blend-overlay"></div>
+              <img src="./img/bookontable.png" alt="BookOnTable" class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">BookOnTable</h3>
+              <p class="text-textMuted mb-6 line-clamp-3">
+                Plataforma criada para aprender Inglês através de trechos de séries e filmes.
+              </p>
+              <a href="https://book-on-table.herokuapp.com/" target="_blank" class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors gap-2">
+                Ver site <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="group relative bg-dark rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-colors duration-500 lg:col-span-2">
+            <div class="h-60 overflow-hidden relative">
+              <div class="absolute inset-0 bg-primary/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500 z-10 mix-blend-overlay"></div>
+              <img src="./img/phonestore.png" alt="Phone Store" class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8 flex flex-col justify-center">
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Phone Store</h3>
+              <p class="text-textMuted mb-6 max-w-xl">
+                Loja de smartphones feita com ReactJS. Demonstração de listagem, carrinho e estado da aplicação.
+              </p>
+              <a href="https://react-phone-store-julio.netlify.app/" target="_blank" class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors gap-2">
+                Ver site <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+           <!-- Project 5 -->
+           <div class="group relative bg-dark rounded-3xl overflow-hidden border border-white/10 hover:border-primary/50 transition-colors duration-500">
+            <div class="h-60 overflow-hidden relative">
+              <div class="absolute inset-0 bg-primary/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500 z-10 mix-blend-overlay"></div>
+              <img src="./img/resposta.png" alt="Resposta Criativa" class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <h3 class="font-heading text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Resposta Criativa</h3>
+              <p class="text-textMuted mb-6 line-clamp-3">
+                Site desenvolvido como resposta criativa para o processo da Brazil Generation.
+              </p>
+              <a href="https://respostacriativa.netlify.app/" target="_blank" class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors gap-2">
+                Ver site <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="container-fluid">
-      <hr />
-      <div class="row my-4 justify-content-center">
-        <a href="https://github.com/juliop3p"
-          ><i
-            class="fab fa-github-alt mx-3 text-light hover-green"
-            style="font-size: 32px"
-          ></i
-        ></a>
-        <a href="https://www.linkedin.com/in/juliop3p/"
-          ><i
-            class="fab fa-linkedin-in mx-3 text-light hover-green"
-            style="font-size: 32px"
-          ></i
-        ></a>
-        <a href="https://wa.me/5513981418755">
-          <i
-            class="fab fa-whatsapp mx-3 text-light hover-green"
-            style="font-size: 32px"
-          ></i
-        ></a>
-      </div>
-      <div class="row justify-content-center mb-3">
-        <small class="text-light text-monospace"
-          >Feito com ❤️ por Julio Cesar</small
-        >
+    <footer class="border-t-2 border-primary/20 mt-12 py-16 relative overflow-hidden bg-gradient-to-b from-dark to-black">
+      <!-- Glow Effect -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-3xl h-1 bg-primary blur-2xl z-0"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary/5 rounded-[100%] blur-[120px] pointer-events-none z-0"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        <a href="#home" class="font-heading font-bold text-4xl tracking-tighter text-white mb-6 hover:text-primary transition-colors group">
+          Julio<span class="text-primary group-hover:text-white transition-colors">.</span>
+        </a>
+        
+        <p class="text-textMuted max-w-md mb-8">
+          Sempre em busca de novos desafios e pronto para construir a próxima grande solução digital.
+        </p>
+
+        <div class="flex gap-6 mb-12">
+          <a href="https://github.com/juliop3p" target="_blank" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-primary/20 hover:border-primary hover:text-primary hover:-translate-y-2 hover:shadow-neon transition-all duration-300">
+            <i class="fa-brands fa-github text-2xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/juliop3p/" target="_blank" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-primary/20 hover:border-primary hover:text-primary hover:-translate-y-2 hover:shadow-neon transition-all duration-300">
+            <i class="fa-brands fa-linkedin-in text-2xl"></i>
+          </a>
+          <a href="https://wa.me/5513981418755" target="_blank" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-primary/20 hover:border-primary hover:text-primary hover:-translate-y-2 hover:shadow-neon transition-all duration-300">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 text-textMuted text-sm font-mono bg-white/5 px-6 py-3 rounded-full border border-white/5">
+          Feito com <span class="text-red-500 animate-pulse text-lg">❤️</span> por Julio Cesar © 2026
+        </div>
       </div>
     </footer>
-    <!-- end Footer -->
 
-    <!-- Script -->
-    <script defer src="./js/script.js"></script>
+    <script>
+      // Mobile menu toggle
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
 
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu on link click
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    </script>
   </body>
 </html>
